@@ -8,7 +8,12 @@ import { NotFoundComponent } from './page/not-found/not-found.component';
 import { HeaderComponent } from './shared/header/header.component';
 import { FooterComponent } from './shared/footer/footer.component';
 import { AsideComponent } from './shared/aside/aside.component';
-
+import { ConnexionComponent } from './shared/auth/connexion/connexion.component';
+import { InscriptionComponent } from './shared/auth/inscription/inscription.component';
+import { ProfileComponent } from './shared/auth/profile/profile.component';
+import { FormsModule,ReactiveFormsModule } from '@angular/forms';
+    
+import {HttpClientModule} from '@angular/common/http';
 @NgModule({
   declarations: [
     AppComponent,
@@ -16,11 +21,18 @@ import { AsideComponent } from './shared/aside/aside.component';
     NotFoundComponent,
     HeaderComponent,
     FooterComponent,
-    AsideComponent
+    AsideComponent,
+    ConnexionComponent,
+    InscriptionComponent,
+    ProfileComponent
   ],
   imports: [
+    
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FormsModule,
+    ReactiveFormsModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
