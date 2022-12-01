@@ -1,0 +1,16 @@
+<div class="row row-cols-1 row-cols-md-2 g-4" style="margin:5rem ;">
+<div *ngFor="let stage of stages">
+  <div class="col">
+  <div class="card">
+    <img src="..." class="card-img-top" alt="stage">
+    <div class="card-body">
+      <h5 class="card-title"><b><u>{{ stage.sujet | uppercase }}</u></b></h5>
+      <h6 class="card-subtitle mb-2 text-muted">C'est un <b>{{ stage.type | uppercase}}</b> de <b>{{ stage.duree }}</b> mois</h6>
+      <p class="card-text"><b>Description : </b>{{ stage.description }}</p>
+      <a href="#" class="btn btn-outline-info">Détails</a>
+      <a href="#" class="btn btn-outline-success">Postuler</a>
+    </div>
+  </div>
+</div>
+</div>
+</div>

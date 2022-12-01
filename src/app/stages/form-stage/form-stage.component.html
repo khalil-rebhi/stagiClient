@@ -1,0 +1,34 @@
+
+<div class="d-flex justify-content-center ">
+    <form [formGroup]="form" (submit)="ajouter()">
+    <div class="form-group">
+    <label for="sujet">Sujet</label>
+    <input id="sujet" type="text" formControlName="sujet" class="form-control">
+</div>
+<div class="form-group">
+    <label for="description">Description</label>
+    <input id="description" type="text" formControlName="description" class="form-control">
+</div>
+<div class="form-group">
+    <label for="type">Type</label>
+    <input id="type" type="text" formControlName="type" class="form-control">
+</div>
+<div class="form-group">
+    <label for="duree">Durée</label>
+    <input id="duree" type="number" formControlName="duree" class="form-control">
+</div>
+<div class="form-group">
+    <label for="dateDebut">Date début</label>
+    <input id="dateDebut" type="date" formControlName="dateDebut" class="form-control">
+</div>
+<div class="form-group">
+    <label for="dateFin">Date fin</label>
+    <input id="dateFin" type="date" formControlName="dateFin" class="form-control">
+</div>
+<div class="form-group" style="margin-top: 20px;">
+    <a class="btn btn-outline-danger" (click)="goBack()">Annuler</a>
+    <button type="reset" class="btn btn-outline-warning">Vider les champs</button>
+    <button type="submit" class="btn btn-outline-success">Ajouter</button>
+</div>
+</form>
+</div>
