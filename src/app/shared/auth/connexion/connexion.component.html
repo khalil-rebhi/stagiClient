@@ -19,7 +19,10 @@
         <p class="text-danger" *ngIf="form.get('password')?.errors?.['required'] && form.get('password')?.touched">Veuillez renseigner une mot de passe</p>
       </div>
     </div>
-  
+    <!-- Error -->
+    <div class="text-danger">
+      {{error}}
+    </div>
     <!-- 2 column grid layout for inline styling -->
     <div class="row mb-4">
       <div class="col d-flex justify-content-center">

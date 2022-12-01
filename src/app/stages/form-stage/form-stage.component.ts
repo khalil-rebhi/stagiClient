@@ -29,7 +29,7 @@ export class FormStageComponent implements OnInit {
   public ajouter(){
     if (this.form.valid) {
       this.stageService.postStage(this.form.getRawValue()).subscribe(()=>{
-        this.router.navigateByUrl('/stages/stages');
+        this.router.navigateByUrl('/stages');
       },
       
       (err)=>{
