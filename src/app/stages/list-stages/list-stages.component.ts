@@ -15,6 +15,13 @@ export class ListStagesComponent implements OnInit {
 
   ngOnInit(): void {
     this.stageService.getStages().subscribe(result => this.stages= result);
+    
+  }
+
+  public delete(stage: Stage){
+    this.stageService.deleteStage(stage);
+    let index = this.stages.indexOf(stage);
+    this.stages.splice(index,1);
   }
 
 }

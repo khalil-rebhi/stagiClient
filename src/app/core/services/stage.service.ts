@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { Observable } from "rxjs";
-import { HttpClient } from "@angular/common/http";
+import { HttpClient, HttpParams } from "@angular/common/http";
 import { Stage } from "../model/stages";
 
 @Injectable({
@@ -16,5 +16,9 @@ export class StageService {
 
   public postStage(stage: Stage):Observable<any>{
     return this.http.post('/api/stages/new-stage',stage);
+  }
+
+  public deleteStage(stage: Stage){
+    return this.http.delete(`/api/stages/delete-stage/${stage.reference}`).subscribe();
   }
 }
