@@ -5,7 +5,7 @@ import { ListStagesComponent } from './list-stages/list-stages.component';
 import { StagesComponent } from './stages.component';
 
 const routes: Routes = [{ path: '', component: StagesComponent ,children:[
-  {path:'stages', component:ListStagesComponent},
+  {path:'', component:ListStagesComponent},
   {path:'ajouter', component:FormStageComponent}
 ]}];
 
