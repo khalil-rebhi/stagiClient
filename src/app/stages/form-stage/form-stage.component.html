@@ -25,10 +25,11 @@
     <label for="dateFin">Date fin</label>
     <input id="dateFin" type="date" formControlName="dateFin" class="form-control">
 </div>
+<input id="reference" type="hidden" formControlName="reference" class="form-control">
 <div class="form-group" style="margin-top: 20px;">
     <a class="btn btn-outline-danger" (click)="goBack()">Annuler</a>
     <button type="reset" class="btn btn-outline-warning">Vider les champs</button>
-    <button type="submit" class="btn btn-outline-success">Ajouter</button>
+    <button type="submit" class="btn btn-outline-success">{{action}}</button>
 </div>
 </form>
 </div>

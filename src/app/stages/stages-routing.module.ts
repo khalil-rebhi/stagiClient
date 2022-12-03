@@ -6,7 +6,8 @@ import { StagesComponent } from './stages.component';
 
 const routes: Routes = [{ path: '', component: StagesComponent ,children:[
   {path:'', component:ListStagesComponent},
-  {path:'ajouter', component:FormStageComponent}
+  {path:'ajouter', component:FormStageComponent},
+  {path:'modifier/:reference', component:FormStageComponent}
 ]}];
 
 @NgModule({
