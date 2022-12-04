@@ -29,4 +29,8 @@ export class StageService {
   public deleteStage(stage: Stage){
     return this.http.delete(`/api/stages/delete-stage/${stage.reference}`).subscribe();
   }
+
+  public clearAll(){
+    return this.http.delete(`/api/stages/delete-all`);
+  }
 }

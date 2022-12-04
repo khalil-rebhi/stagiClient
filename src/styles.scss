@@ -1,10 +1,14 @@
 @import url('https://fonts.googleapis.com/css?family=Lato:300,400|Poppins:300,400,800&display=swap');
 
 
+.btn-circle {
+  border-radius: 25px;
+}
+
 #welcome{
   width: 100%;
   height: 100vh;
-  background: linear-gradient(90deg, #0f0c29, #00c9ff);
+  background: linear-gradient(180deg, #0f0c29, #00c9ff);
   animation: anim 15s infinite ease-in-out;
 }
 

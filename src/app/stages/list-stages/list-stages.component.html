@@ -4,9 +4,9 @@
     <div class="row row-cols-1 row-cols-md-2 g-4" style="margin:5rem ;">
       <div *ngFor="let stage of stages">
         <div class="col" (mouseover)="show(stage)">
-        <div class="card">
+        <div class="card shadow p-3 bg-white rounded mb-3">
           <div class="d-flex justify-content-end" id="delete">
-            <a (click)="delete(stage)" class="btn btn-outline-danger"><i class="fa-solid fa-x"></i></a>
+            <a (click)="delete(stage)" class="btn btn-outline-danger btn-circle"><i class="fa-solid fa-x"></i></a>
           </div>
           <img src="https://www.cocerto.fr/wp/wp-content/uploads/2015/02/STAGE.png" class="card-img-top" alt="stage">
           <div class="card-body">
@@ -14,7 +14,6 @@
             <h6 class="card-subtitle mb-2 text-muted">C'est un <b>{{ stage.type | uppercase}}</b> de <b>{{ stage.duree }}</b> mois</h6>
             <div class="wrapper text-center">
             <div class="btn-group">
-            <a (click)="show(stage)" class="btn btn-outline-info">Détails</a>
             <a routerLink="modifier/{{stage.reference}}" class="btn btn-outline-primary">Modifier</a>
             <a href="#" class="btn btn-outline-success">Postuler</a>
           </div>
@@ -25,8 +24,8 @@
       </div>
       </div>      
   </div>
-    <div class="col-4">
-      <div class="card border-info mb-3"  id="details">
+    <div class="col-4" *ngIf="selectedStage">
+      <div class="card border-info mb-3 shadow p-3 bg-white rounded mb-3"  id="details">
         <div class="card-header"><b>{{ selectedStage.sujet | uppercase }}</b></div>
         <div class="card-body">
           <img src="https://www.cocerto.fr/wp/wp-content/uploads/2015/02/STAGE.png" class="card-img-top" alt="stage">

@@ -1,0 +1,55 @@
+<div class="container">
+    <div class="row">
+    <div class="col-8">
+      <div class="row row-cols-1 row-cols-md-2 g-4" style="margin:5rem ;">
+        <div *ngFor="let formation of formations">
+          <div class="col" (mouseover)="show(formation)">
+          <div class="card shadow p-3 bg-white rounded mb-3">
+            <div class="d-flex justify-content-end" id="delete">
+              <a (click)="delete(formation)" class="btn btn-outline-danger btn-circle"><i class="fa-solid fa-x"></i></a>
+            </div>
+            <img src="https://www.cocerto.fr/wp/wp-content/uploads/2015/02/STAGE.png" class="card-img-top" alt="formation">
+            <div class="card-body">
+              <div class="row">
+                <h5 class="card-title col-10"><b><u>{{ formation.titre | uppercase }}</u></b></h5>
+                <div class="col-2 d-flex justify-content-end">
+                  <span *ngIf="formation.isCertified"><i class="fa-solid fa-check" style="color: green;"></i></span>
+                  <span *ngIf="!formation.isCertified"><i class="fa-solid fa-xmark" style="color:red;"></i></span>
+              </div>
+              </div>
+              <div class="row">
+                <div class="col-12">
+                  <h6 class="card-subtitle mb-2 text-muted">Une formation de <b>{{ formation.domaine | uppercase}}</b> seulement avec <b>{{ formation.prix }}</b> DT</h6>
+                </div>
+
+              </div>
+              <div class="wrapper text-center">
+              <div class="btn-group">
+              <a routerLink="modifier/{{formation.reference}}" class="btn btn-outline-primary">Modifier</a>
+              <a href="#" class="btn btn-outline-success">Postuler</a>
+            </div>
+            </div>
+          </div>
+          </div>
+        </div>
+        </div>
+        </div>      
+    </div>
+      <div class="col-4" *ngIf="selectedformation">
+        <div class="card shadow p-3 bg-white rounded mb-3" [ngClass]="{'border-danger': !selectedformation.isCertified,'border-success': selectedformation.isCertified}" id="details">
+          <div class="card-header"><b>{{ selectedformation.titre | uppercase }} {{ selectedformation.isCertified}}</b></div>
+          <div class="card-body">
+            <img src="https://www.cocerto.fr/wp/wp-content/uploads/2015/02/STAGE.png" class="card-img-top" alt="formation">
+            <h5 class="card-title" style="margin-top: 25px;"><b>Domaine : </b>{{ selectedformation.domaine | uppercase}}</h5>
+            <h5 class="card-subtitle text-muted" *ngIf="selectedformation.isCertified"><div class="row"><span class="col-6">Certifié</span><span class="col-6 d-flex justify-flex-end"><i class="fa-solid fa-check" style="color: green;"></i></span></div></h5>
+            <h5 class="card-subtitle text-muted" *ngIf="!selectedformation.isCertified"><div class="row"><span class="col-6">Certifié</span><span class="col-6 d-flex justify-flex-end"><i class="fa-solid fa-xmark" style="color: red;"></i></span></div></h5>
+            <h6 class="card-subtitle mb-2 text-muted" style="margin-top:25px;">C'est un <b>{{ selectedformation.domaine | uppercase}}</b> de <b>{{ selectedformation.prix }}</b> DT</h6>
+            <p class="card-text"><b>Description:</b> {{ selectedformation.description }}</p>
+            <p class="card-text"><b>Certificat :</b>{{ selectedformation.certificat}}</p>
+            <p class="card-text"><b>Date début : </b>{{ selectedformation.dateDebut | date:'dd-MM-yyyy' }}</p>
+            <p class="card-text"><b>Date fin : </b>{{ selectedformation.dateFin | date:'dd-MM-yyyy' }}</p>
+          </div>
+        </div>
+    </div>
+  </div>
+  </div>

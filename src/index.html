@@ -10,6 +10,7 @@
   <script src=
   "https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js">
       </script>
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 </head>
 <body>
   <div id="welcome">
@@ -44,18 +45,20 @@
     $(document).ready(check());
 
     function show() {
-      var visited = localStorage.getItem("visited");
+      var visited = sessionStorage.getItem("visited");
       if(!visited){
-        $("#welcome").fadeOut(200);
-        document.getElementById("app-root").style.display = "inherit";
-        document.getElementById("welcome").style.display= "none";
-        localStorage.setItem('visited',true);
+        $("#welcome").slideUp(500);
+        window.setTimeout(() => {
+          document.getElementById("app-root").style.display = "inherit";
+          document.getElementById("welcome").style.display= "none";
+          sessionStorage.setItem('visited',true);
+        },600);
+
       }
     }
 
     function check(){
-      var visited = localStorage.getItem('visited');
-      console.log(visited);
+      var visited = sessionStorage.getItem('visited');
       if (!visited) {
         document.getElementById("app-root").style.display = "inherit";
         document.getElementById("welcome").style.display= "visible";
