@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+import { BibliothequeService } from '../core/services/bibliotheque.service';
 
 @Component({
   selector: 'app-bibliothequess',
@@ -7,9 +9,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class BibliothequessComponent implements OnInit {
 
-  constructor() { }
+  constructor(private bibliothequeService: BibliothequeService, private router: Router) { }
 
   ngOnInit(): void {
+  }
+
+  deleteAll(){
+    this.bibliothequeService.deleteAll();
+    window.location.reload();
   }
 
 }

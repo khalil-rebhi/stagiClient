@@ -1,0 +1,83 @@
+<div class="container">
+    <div class="row">
+    <div class="col-8">
+      <div class="row row-cols-1 row-cols-md-2 g-4" style="margin:5rem ;">
+        <div *ngFor="let b of bibs">
+          <div class="col">
+          <div class="card shadow p-3 bg-white rounded mb-3">
+            <div class="d-flex justify-content-end" id="delete">
+              <a  class="btn btn-outline-danger btn-circle" data-bs-toggle="modal" data-bs-target="#exampleModal" data-bs-whatever="test" (click)="assign(b)"><i class="fa-solid fa-x"></i></a>
+            </div>
+            <img src="https://www.cocerto.fr/wp/wp-content/uploads/2015/02/STAGE.png" class="card-img-top" alt="b">
+            <div class="card-body">
+              <div class="row">
+                <h5 class="card-title col-10"><b><u>{{ b.nom | uppercase }}</u></b></h5>
+                <div class="col-2 d-flex justify-content-end">
+              </div>
+              </div>
+              <div class="row">
+                <div class="col-12">
+                  <h6 class="card-subtitle mb-2 text-muted">Une b de <b>{{ b.nom | uppercase}}</b> seulement avec <b>{{ b.nom }}</b> DT</h6>
+                </div>
+
+              </div>
+              <div class="wrapper text-center">
+              <div class="btn-group">
+              <a routerLink="modifier/{{b.reference}}" class="btn btn-outline-primary">Modifier</a>
+              <a href="#" class="btn btn-outline-success">Postuler</a>
+            </div>
+            </div>
+          </div>
+          </div>
+        </div>
+        </div>
+        </div>      
+    </div>
+    
+        </div>
+    </div>
+
+    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h1 class="modal-title fs-5" id="exampleModalLabel">Etes-Vous sûr?</h1>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+              <div class="mb-3 alert alert-warning">
+                <p class="col-form-label">En supprimant cette bibliothèque vous pouvez perdre les données de vos livres.</p>
+              </div>
+              <div class="mb-3">
+                <label for="warning"><b>Ré-écrivez le nom du bibliothèque pour confirmer votre action :</b></label>
+                <input type="text" name="warning" [(ngModel)]="test" class="form-control">
+              </div>
+          </div>
+          <div class="modal-footer">
+          <div class="d-flex justify-flex-center">
+            <button type="button" class="btn btn-outline-secondary" data-bs-dismiss="modal">Close</button>
+            <button type="button" class="btn btn-outline-danger" [disabled]="test != nomVerif" (click)="supprimer(selectedBib)" data-bs-dismiss="modal">Supprimer</button>
+          </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      const exampleModal = document.getElementById('exampleModal')
+exampleModal.addEventListener('show.bs.modal', event => {
+  // Button that triggered the modal
+  const button = event.relatedTarget
+  // Extract info from data-bs-* attributes
+  const recipient = button.getAttribute('data-bs-whatever')
+  // If necessary, you could initiate an AJAX request here
+  // and then do the updating in a callback.
+  //
+  // Update the modal's content.
+  const modalTitle = exampleModal.querySelector('.modal-title')
+  const modalBodyInput = exampleModal.querySelector('.modal-body input')
+
+  modalTitle.textContent = `New message to ${recipient}`
+  modalBodyInput.value = recipient
+})
+    </script>
