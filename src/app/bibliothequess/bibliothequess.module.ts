@@ -5,19 +5,21 @@ import { BibliothequessComponent } from './bibliothequess.component';
 import { ListBibliothequesComponent } from './list-bibliotheques/list-bibliotheques.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { FormBibliothequesComponent } from './form-bibliotheques/form-bibliotheques.component';
+import { ListBooksComponent } from './list-books/list-books.component';
 
 
 @NgModule({
   declarations: [
     BibliothequessComponent,
     ListBibliothequesComponent,
-    FormBibliothequesComponent
+    FormBibliothequesComponent,
+    ListBooksComponent
   ],
   imports: [
     CommonModule,
     BibliothequessRoutingModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule    
   ]
 })
 export class BibliothequessModule { }

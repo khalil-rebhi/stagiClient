@@ -3,11 +3,13 @@ import { RouterModule, Routes } from '@angular/router';
 import { BibliothequessComponent } from './bibliothequess.component';
 import { FormBibliothequesComponent } from './form-bibliotheques/form-bibliotheques.component';
 import { ListBibliothequesComponent } from './list-bibliotheques/list-bibliotheques.component';
+import { ListBooksComponent } from './list-books/list-books.component';
 
 const routes: Routes = [{ path: '', component: BibliothequessComponent, children:[
   {path : '', component: ListBibliothequesComponent},
   {path:'new-bibliotheque', component: FormBibliothequesComponent},
-  {path:'modifier/:reference',component:FormBibliothequesComponent}
+  {path:'modifier/:reference',component:FormBibliothequesComponent},
+  {path:'books/:reference', component:ListBooksComponent}
 ] }];
 
 @NgModule({
