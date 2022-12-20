@@ -1,6 +1,4 @@
 <div class="container">
-    <div class="row">
-    <div class="col-8">
       <div class="row row-cols-1 row-cols-md-2 g-4" style="margin:5rem ;">
         <div *ngFor="let b of bibs">
           <div class="col">
@@ -24,7 +22,7 @@
               <div class="wrapper text-center">
               <div class="btn-group">
               <a routerLink="modifier/{{b.reference}}" class="btn btn-outline-primary">Modifier</a>
-              <a href="#" class="btn btn-outline-success">Postuler</a>
+              <a routerLink="books/{{b.reference}}" class="btn btn-outline-success">Visiter</a>
             </div>
             </div>
           </div>
@@ -33,15 +31,11 @@
         </div>
         </div>      
     </div>
-    
-        </div>
-    </div>
-
     <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
       <div class="modal-dialog modal-dialog-centered">
         <div class="modal-content">
           <div class="modal-header">
-            <h1 class="modal-title fs-5" id="exampleModalLabel">Etes-Vous sûr?</h1>
+            <h1 class="modal-title fs-5" id="exampleModalLabel">Vous voulez vraiment supprimer {{nomVerif}}?</h1>
             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
           </div>
           <div class="modal-body">
@@ -56,7 +50,7 @@
           <div class="modal-footer">
           <div class="d-flex justify-flex-center">
             <button type="button" class="btn btn-outline-secondary" data-bs-dismiss="modal">Close</button>
-            <button type="button" class="btn btn-outline-danger" [disabled]="test != nomVerif" (click)="supprimer(selectedBib)" data-bs-dismiss="modal">Supprimer</button>
+            <button type="button" class="btn btn-outline-danger" [disabled]="(test) != (nomVerif)" (click)="supprimer(selectedBib)" data-bs-dismiss="modal">Supprimer</button>
           </div>
           </div>
         </div>
