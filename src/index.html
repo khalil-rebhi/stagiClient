@@ -28,15 +28,7 @@
   
       </div>
   </div>
-  
-  <a target="_blank" onclick="show()"><footer class="footer">
-      <div class="texto">
-          <span>
-              <i class="fa-solid fa-rocket"></i>
-              GET STARTED</span>
-      </div>
-  </footer>
-     </a>
+
   </div>
   <div id="app-root">
     <app-root></app-root>
@@ -60,13 +52,17 @@
     function check(){
       var visited = sessionStorage.getItem('visited');
       if (!visited) {
-        document.getElementById("app-root").style.display = "inherit";
+        document.getElementById("app-root").style.display = "none";
         document.getElementById("welcome").style.display= "visible";
       } else {
         document.getElementById("app-root").style.display = "inherit";
         document.getElementById("welcome").style.display= "none";
       }
     }
+
+    setTimeout(() => {
+      show();
+    }, 6000);
 </script>
 </body>
 </html>
