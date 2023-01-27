@@ -1,1 +1,20 @@
-<p>list-quiz works!</p>
+<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet">
+<div class="container">
+    <div class="row">
+        <div class="col-lg-3 col-sm-6" *ngFor="let d of listDomaines">
+            <div class="card-box bg-green" >
+                <div class="inner">
+                    <h3> {{d}} </h3>
+                </div>
+                <div class="icon">
+                    <i class="fa-brands fa-php" [ngClass]="'fa-'+d" aria-hidden="true"></i>  
+                </div>
+                <a href="#" class="card-box-footer">View More <i class="fa fa-arrow-circle-right"></i></a>
+            </div>
+        </div>
+        
+
+        
+       
+	</div>
+</div>
