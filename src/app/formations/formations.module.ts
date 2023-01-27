@@ -7,13 +7,19 @@ import { ListFormationsComponent } from './list-formations/list-formations.compo
 import { AddFormationsComponent } from './add-formations/add-formations.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { FormsModule } from '@angular/forms';
+import { AsideFormationsComponent } from './aside-formations/aside-formations.component';
+import { UserListFormationsComponent } from './user-list-formations/user-list-formations.component';
+import { CardFormationComponent } from './card-formation/card-formation.component';
 
 
 @NgModule({
   declarations: [
     FormationsComponent,
     ListFormationsComponent,
-    AddFormationsComponent
+    AddFormationsComponent,
+    AsideFormationsComponent,
+    UserListFormationsComponent,
+    CardFormationComponent
   ],
   imports: [
     CommonModule,

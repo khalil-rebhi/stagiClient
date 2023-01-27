@@ -1,0 +1,29 @@
+<div class="card ">
+    <img src="../../../assets/img/angularFormation.png" class="card-img-top"
+      alt="Skyscrapers" />
+    <div class="card-body">
+        <div class="col-2 d-flex justify-content-end text-right">
+            
+        </div>
+      <p class="card-text-domain">{{formation.domaine}}</p>
+      <h5 class="card-title">
+        {{formation.titre}} 
+        <span *ngIf="formation.isCertified"><i  class="fa-solid fa-certificate" style="color: green;"></i></span>
+        <span *ngIf="!formation.isCertified"><i class="fa-solid fa-xmark" style="color:red;"></i></span>
+    </h5>
+      
+      
+      <p class="card-text">
+        <i class="fa-solid fa-calendar-days m-2"></i> Date Debut : {{formation.dateDebut | date}}
+      </p>
+      <p class="card-text">
+        <i class="fa-solid fa-calendar-days m-2"></i> Date Fin : {{formation.dateFin | date}}
+      </p>
+      <p class="text-muted" style="float: right; font-weight: 600;">Prix : {{formation.prix}} DT</p>
+
+   
+    </div>
+    <div class="card-footer">
+      <small class="text-muted">Posté il y a 3 minutes</small>
+    </div>
+  </div>
